@@ -144,7 +144,7 @@ pd-ctl -d config set max-store-down-time 10m
     {{< copyable "shell-regular" >}}
 
     ```shell
-    kubectl get tc ${CLUSTER_NAME} -ojson | jq '.status.tikv.stores | .[] | select ( .podName == "${POD_NAME}" ) | .id'
+    kubectl get tc ${CLUSTER_NAME} -ojson | jq ".status.tikv.stores | .[] | select ( .podName == \"${POD_NAME}\" ) | .id"
     ```
 
     下线实例：
